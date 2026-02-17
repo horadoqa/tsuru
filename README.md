@@ -1,5 +1,9 @@
 # tsuru
 
+<p align="center">
+<img src="./images/tsuru.jpg">
+</p>
+
 O Tsuru é uma plataforma como serviço (PaaS) open-source, projetada para melhorar a produtividade dos desenvolvedores, oferecendo uma forma eficiente e flexível de gerenciar e implantar aplicações em ambientes de produção. A ideia central do Tsuru é proporcionar uma experiência simples, mas poderosa, permitindo que os desenvolvedores se concentrem mais no código e menos na infraestrutura.
 
 ### Características principais do Tsuru:
