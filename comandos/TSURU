@@ -1,0 +1,33 @@
+https://www.youtube.com/watch?v=YD3iNEBb4t0
+
+TSURU
+
+http://quickstart.cloud.globoi.com/
+
+http://quickstart.gcloud.globoi.com/handsonlab/#criando-uma-app-no-tsuru
+
+
+
+Listar todos os projetos
+
+$ tsuru app-list
+
+Listar Units de uma APP
+
+$ tsuru app-info -a <nome da aplicação>
+
+
+Adicionar Units
+
+$ tsuru unit-add 1 -a work-on-qa2.gcloud.qa02.globoi.com -p web
+
+
+
+
+
+
+
+
+
+
+

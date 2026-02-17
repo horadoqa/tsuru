@@ -1,0 +1,17 @@
+Unbind da aplicação
+
+$ tsuru service-instance-unbind <serviçe +  Instance (Plan)> -a <nome da aplicação >
+
+
+tsuru service-instance-unbind acl osquery-fleet-qa2-acls osquery-fleet-qa2
+
+
+Service             Instance (Plan)
+rpaas-be-rjdev		cartola-api-qa02 (qa2)
+----------------    ------------------------
+tsuru-dbaas-qa2		redis_qa2_clus_cart (redis-4-0-small-ha-cluster-rjdev-qa2-qa2)
+					competicao_mysql_qa2 (mysql-5-7-25-small-single-node-rjdev-qa2-qa2)
+					redis_cartola_api_qa2 (redis-3-2-small-ha-sentinel-cs-rjdev-qa2-qa2)
+
+
+

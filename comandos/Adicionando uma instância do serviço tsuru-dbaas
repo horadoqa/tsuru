@@ -1,0 +1,9 @@
+Adicionando uma instância do serviço tsuru-dbaas
+
+Serviço: "tsuru-dbaas-cme", "tsuru-dbaas-rjdev"
+
+    $ tsuru service-list
+    $ tsuru service-instance-add tsuru-dbaas-dev holtdemo_db mongodb-3-4-small-single-node-cs-rjdev-dev -t devops -d "Aplicação para os devops-tsuru"
+    $ tsuru service-instance-bind tsuru-dbaas-dev holtdemo_db -a holtdemo-dev
+
+Os planos do serviço tsuru-dbaas podem ser consultados também em : https://dbaas.globoi.com/physical/plans_details/

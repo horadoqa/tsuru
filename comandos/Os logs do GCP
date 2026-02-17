@@ -1,0 +1,11 @@
+Os logs do GCP
+
+produção estão em: https://logging.tsuru.gcp.i.globo e 
+
+desenvolvimento em: https://logging.tsuru.dev.gcp.i.globo
+
+você ainda pode ver os logs em tempo real:
+
+$ tsuru app log -a NOMEAPP -f
+
+@tbot gcp-logs

@@ -1,0 +1,23 @@
+Mover app de HOST
+
+tsuru app-update -a <aplicacao> --pool qa02-kube-<letra>
+
+Exemplo:
+
+tsuru app-update -a sales-mock-qa2 --pool qa02-kube-f && tsuru app-update -a sales-cache-api-qa2 --pool qa02-kube-f && tsuru app-update -a sales-circuit-breaker-api-qa2 --pool qa02-kube-f
+
+
+sales-vitrine-bff-qa2
+
+sales-vitrine-web-qa2
+
+sales-cache-processor-api-qa2
+
+
+
+
+tsuru app-update -a videos-hits-api-test --pool qa02-pool-
+
+tsuru app-update -a videos-hits-api-test --pool qa02-kube-a
+
+tsuru node list -f pool=qa02-pool-c  -q

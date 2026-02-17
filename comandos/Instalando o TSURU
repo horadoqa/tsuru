@@ -1,0 +1,31 @@
+instalando o TSURU
+
+http://quickstart.gcloud.globoi.com/#instalando
+
+Usando homebrew (somente Mac OS X)
+Se você usa Mac OS X e homebrew, você pode usar um tap customizado para instalar o tsuru. Primeiro adicione o tap:
+
+
+
+
+$ brew tap tsuru/homebrew-tsuru
+
+Agora você pode instalar o tsuru:
+$ brew install tsuru
+
+
+Toda vez que for lançada uma nova versão você pode atualizar o tsuru usando:
+
+$ brew update && brew upgrade tsuru && tsuru --version
+$ brew upgrade tsuru
+
+$ tsuru --version
+tsuru version 1.6.0.
+
+
+
+
+
+
+
+

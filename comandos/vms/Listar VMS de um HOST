@@ -1,0 +1,18 @@
+Listar VMS de um HOST
+
+$ watch 'tsuru node list -f pool=qa02-kube-a -q'
+
+https://10.224.194.130:2376
+https://10.224.194.163:2376
+
+qa02-kube-a
+
+tsuru node list -f pool=qa02-kube-a  -q
+
+
+while true; do tsuru node list -f pool=qa02-kube-f -q | wc -l; sleep 5; done
+
+re-deploy do vip
+
+
+tsuru node list -f pool=qa02-pool-b  -q

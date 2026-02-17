@@ -1,0 +1,3 @@
+Listar Units de uma APP
+
+$ tsuru app-info -a globoid-consent-api-qa02 | grep Units

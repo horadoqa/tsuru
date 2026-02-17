@@ -1,0 +1,22 @@
+Deploy via GitLab CI
+Para fazer o deploy de uma app através do GitLab CI:
+
+No GitLab, habilite o uso de pipelines para o projeto: Settings -> Sharing and permissions -> Pipelines
+
+No GitLab, selecione os runners que quer habilitar para o projeto, em Settings -> CI/CD
+
+No GitLab, configure duas variáveis de ambiente para o pipeline: Settings -> CI/CD -> Secret variables, crie as variáveis abaixo (importante: a checkbox Protected deve estar desmarcada):
+
+TSURU_TARGET: https://tsuru.globoi.com
+TSURU_TOKEN: adicione o token de um usuário com permissão para fazer deploys da app
+
+
+Crie um arquivo .gitlab-ci.yml na raiz do projeto, semelhante ao exemplo abaixo (substituir <app name> pelo nome da sua app no tsuru):
+
+image: docker.artifactory.globoi.com/tsuru/tsuru:latest
+
+deploy:
+  only:
+    - master
+  script:
+    - tsuru app deploy -a <app name> .

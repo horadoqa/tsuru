@@ -1,0 +1,40 @@
+Resize do APP
+
+
+$ tsuru plan-list
++------------+------------------+--------+---------+
+| Name       | CPU              | Memory | Default |
++------------+------------------+--------+---------+
+| c0.1m0.1   | 10%              | 128Mi  | false   |
+| c0.1m0.2   | 10%              | 256Mi  | false   |
+| c0.3m0.5   | 30%              | 512Mi  | false   |
+| c0.3m1     | 30%              | 1Gi    | false   |
+| c0.5m1     | 50%              | 1Gi    | false   |
+| c0.5m2     | 50%              | 2Gi    | false   |
+| c1m1       | 100%             | 1Gi    | false   |
+| c1m2       | 100%             | 2Gi    | false   |
+| c1m4       | 100%             | 4Gi    | false   |
+| c2m1       | 200%             | 1Gi    | false   |
+| c2m2       | 200%             | 2Gi    | false   |
+| c2m4       | 200%             | 4Gi    | false   |
+| c2m8       | 200%             | 8Gi    | false   |
+| c4m16      | 400%             | 16Gi   | false   |
+| c4m2       | 400%             | 2Gi    | false   |
+| c4m4       | 400%             | 4Gi    | false   |
+| c4m8       | 400%             | 8Gi    | false   |
+| c8m4       | 800%             | 4Gi    | false   |
+| c8m8       | 800%             | 8Gi    | false   |
+| extra-huge | 1024 (CPU share) | 4Gi    | false   |
+| giant-huge | 1024 (CPU share) | 6Gi    | false   |
+| huge       | 1024 (CPU share) | 2Gi    | false   |
+| large      | 1024 (CPU share) | 1Gi    | false   |
+| medium     | 1024 (CPU share) | 512Mi  | false   |
+| small      | 1024 (CPU share) | 256Mi  | true    |
+| ultra      | 1024 (CPU share) | 12Gi   | false   |
++------------+------------------+--------+---------+
+
+tsuru app-update -a <aplicação> --plan <plan>
+
+Exemplo:
+
+tsuru app-update -a workon --plan c0.1m1

@@ -1,0 +1,6 @@
+Adicionar Units
+
+$ tsuru unit-add 1 -a <> -p web
+
+
+tsuru unit-add 1 -a report-api -p web

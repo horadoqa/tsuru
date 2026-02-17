@@ -1,0 +1,6 @@
+Destruir a instância
+
+$ tsuru service-instance-remove <serviçe + Instance (Plan)>
+
+$ tsuru service-instance-remove tsuru-dbaas-qa2 rgraphql_lab_sentinel_mem_qa2
+

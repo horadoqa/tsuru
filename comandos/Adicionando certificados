@@ -1,0 +1,10 @@
+Adicionando certificados
+
+O Certificado agora é feito pelo GD(Gestao de Dominíos). Com isso basta só solicitar no Globo Serviço, passando os dados conforme o formulário. GS > Abertura de chamados > Centro de Operações de Segurança > Gerar Certificado Digital
+Forçando redirect para HTTPS no rpaas
+
+Para forçar que uma rota seja redirecionada para HTTPS basta adicioná-la com a opção --https_only
+
+$ tsuru rpaas route -s rpaas-fe-cme -i rpaas-instance-name -p / -d minha_app_blog.cloud.globoi.com --https_only add
+
+Um tsuru service instance info rpaas-fe-cme rpaas-instance-name ira mostrar essa rota como https only ou qualquer outra que tenha sido ativada com essa opção

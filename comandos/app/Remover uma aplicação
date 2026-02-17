@@ -1,0 +1,6 @@
+Remover uma aplicação 
+
+$ tsuru app-remove -a <nome da aplicação> -- destroy
+
+
+tsuru app-remove -a portal-qa2-nginx -- destroy

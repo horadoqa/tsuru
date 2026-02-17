@@ -1,0 +1,7 @@
+Verificar as variáveis da aplicação 
+
+ $ tsuru env get -a [APP]
+
+ Em Produção
+
+ $ tsuru env get -a gcn-dinamic-prod-blue

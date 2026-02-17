@@ -1,0 +1,4 @@
+Adicionar integrante ao time no TSURU 
+
+$ tsuru role-assign team-member <email do usuário>
+Role successfully assigned!

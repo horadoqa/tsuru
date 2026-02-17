@@ -1,0 +1,18 @@
+O que preciso fazer? Mudar o target no client do tsuru (em sua máquina e/ou CI), de http://tsuru.globoi.com para https://tsuru.globoi.com. 
+
+Procedimento: 
+
+#Listar o target padrão(para um eventual rollback)
+
+$ tsuru target list | grep ^\*
+
+* default (http://tsuru.globoi.com) 
+
+#Adicionar o target apontando para a API em HTTPS (necessário apenas caso o target acima já não esteja setado para https):
+
+$ tsuru target add secure https://tsuru.globoi.com -s
+
+
+Para verificar, basta executar qualquer comando do tsuru ex: 
+
+$ tsuru app list

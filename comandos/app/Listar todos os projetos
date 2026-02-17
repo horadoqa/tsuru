@@ -1,0 +1,8 @@
+Listar todos os projetos
+
+$ tsuru app-list
+
+
+Do time 
+
+$ tsuru app list -t qa2

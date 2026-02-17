@@ -1,0 +1,92 @@
+RPAAS
+
+Reverse Proxy as a Service
+
+Conjunto de servidores NGINX
+
+quickstart.tsuru.globoi.com/rpaas
+
+Expor aplicações na internet
+
+Cache
+
+Lógicas na borda
+
+
+Caminho de um acesso: myapp.globo.com
+
+ 								=> RPAAS FE
+Minha APP => FE LOAD BALANCER	=> RPAAS FE => BE LOAD BALANCER => Segue...
+								=> RPAAS FE
+
+
+
+				 => RPAAS BE			   
+BE LOAD BALANCER => RPAAS BE => GALEB => TSURU NODE
+				 => RPAAS BE
+
+
+GALEB - Virtual Router
+
+---------------------------------------------------------------------
+
+
+Caminho de um acesso: myapp.cloud.globoi.com / myapp.gcloud.globoi.com acessam ao BE Load Balancer
+
+
+				 => RPAAS BE			   
+BE LOAD BALANCER => RPAAS BE => GALEB => TSURU NODE
+				 => RPAAS BE
+
+
+GALEB - Virtual Router
+
+
+---------------------------------------------------------------------
+
+
+Expor para a Internet
+
+$ tsuru service-instance-add rpaasv2-fe-cme rpaas-myapp --team <time>
+
+$ tsuru service-instance-info rpaasv2-fe-cme rpaas-myapp
+
+Só permite Bind com uma aplicação, diferente do DBAAS
+$ tsuru service-instance-bind rpaasv2-fe-cme rpaas-myapp --app <myapp>
+
+Remover o Bind
+$ tsuru service-instance-unbind rpaasv2-fe-cme rpaas-myapp --app <myapp>
+
+Remover a instancia
+
+$ tsuru service-instance-remove rpaasv2-fe-cme rpaas-myapp
+
+
+
+
+Configurar uma rota no RPAAS
+
+Destino (VIP ou Router)
+
+$ tsuru rpaas route add -p <rota> -d myapp.gcloud.globoi.com
+
+Configuração NGINX
+
+$ cat custom.conf
+
+location / {
+	return 200 "Hello Worl!\n";
+}
+
+$ tsuru rpaas route add -p <rota> -c @custom.conf
+
+
+
+
+
+
+
+
+
+
+

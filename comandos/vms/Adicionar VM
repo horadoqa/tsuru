@@ -1,0 +1,11 @@
+Adicionar VM
+
+DOCKER
+tsuru node-add template=docker_qa02_a_CMAQ24BE
+
+
+KUBERNETES
+$ tsuru node-add template=kube_qa02_pool_f_CMAQ24BE
+
+
+cat /etc/passwd

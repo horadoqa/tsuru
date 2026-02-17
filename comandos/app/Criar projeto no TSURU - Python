@@ -1,0 +1,19 @@
+Criar projeto no TSURU - Python
+
+Criar projeto 
+
+$ tsuru app-create <nome do projeto> python -p small -r galeb_qa02 -t qa2 -o qa02-pool-f -d <descrição do projeto>
+
+
+
+https://github.com/tsuru/platforms/tree/master/examples
+
+dentro dele tem um diretório chamado `/examples`
+e tem exemplo de deploy para várias plataformas... python, ruby, java... o que eu usei foi o `/static` (edited) 
+O path `/platforms/examples/static`
+
+
+$ git remote -v
+
+origin	https://gitlab.globoi.com/qa2/teste-periodico-cartola (fetch)
+origin	https://gitlab.globoi.com/qa2/teste-periodico-cartola (push)

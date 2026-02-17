@@ -1,0 +1,3 @@
+Verificando os ultimos deploys da app
+
+$ tsuru app-deploy-list -a app-ixia

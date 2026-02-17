@@ -1,0 +1,50 @@
+Outros comando do TSURU
+
+$ tsuru event-list -v app-ixia
+
+Quais os deploys foram realizados
+$ tsuru app-deploy-list -a app-ixia
+
+$ tsuru app deploy -a app-ixia .
+
+Informação sobre a APP
+$ tsuru app-info -a app-ixia
+
+Qual pool posso usar?
+$ tsuru pool-list
+
+Quais plataformas disponíveis?
+$ tsuru plataform-list
+
+Quanto de recurso computacional minhas units podem consumir?
+$ tsuru plan-list
+
+Quais routers posso usar?
+$ tsuru router-list
+
+Otimizar o uso de recurso computacional
+
+$ tsuru app-update -a <app name> --team-owner qa2
+
+$ tsuru app-update -a <app name> --plataform <plataforma>
+
+TAGS qual o time ou subtimes
+
+Configurando a APP...
+
+$ tsuru env-set --app <nome da app> MYENV=myvalue [--no-restart]
+$ tsuru env-unset --app <nome da app> [--no-restart]
+
+LOGS nunca devem ser escritos em arquivos
+
+Todo log deve ser enviado para SDout ou SDerror
+
+Logging.globoi.com
+
+Query app:"<nome da app>"
+
+$ tsuru app-log -a work-on-qa2 --follow
+
+
+
+

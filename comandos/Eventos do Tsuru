@@ -1,0 +1,7 @@
+Logs 
+
+$ tsuru event-list -v app-ixia
+
+$ tsuru app-log -a json-server
+
+

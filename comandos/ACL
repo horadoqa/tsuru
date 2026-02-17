@@ -1,0 +1,31 @@
+ACL
+
+Como liberar acesso de uma app para um endereço
+
+Serviço de ACLS
+
+
+$ tsuru service-instance-add acl acl-<app> -t <time>
+
+
+Regras de Acesso
+
+Instalar o Plugin: quickstart.tsuru.globoi.com/acl
+
+$ tsuru acl rules add --help
+
+
+$ tsuru acl rules add acl acl-<app> --ip <dst CIDR>
+
+EXEMPLO:
+$ tsuru acl rules add acl acl-<app> --dns dashboard.tsuru.globoi.com
+
+
+Listar as regras
+
+$ tsuru acl rules list acl acl-<app>
+
+
+Dizer quem vai ter acesso ao serviço
+$ tsuru service-instance-bind --app <app> acl acl-<app>
+

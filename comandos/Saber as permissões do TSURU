@@ -1,0 +1,12 @@
+Saber as permissões do TSURU
+
+$ tsuru user info ricardo.fahham
+
+Dar permissão para usuário ao ambiente de QA
+
+$ tsuru role assign pool-manager <email do usuario> pool-que-vc-quer-dar-permissao
+
+Saber as permissões do TSURU
+
+$ tsuru user info <mario.duarte>
+

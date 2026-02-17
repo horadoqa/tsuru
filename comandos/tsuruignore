@@ -1,0 +1,5 @@
+.tsuruignore.
+
+Agora é possível criar um arquivo chamado .tsuruignore. O conteúdo dele segue o padrão do .gitignore. Tudo que for listado nesse arquivo será ignorado no deploy. Recomendamos criar esse arquivo com tudo que não for necessário para a app, principalmente .git e node_modules, que tendem a ser muito grandes.
+
+PS: isso só vale para deploys via `tsuru app-deploy`. Deploys via git continuam enviando tudo o que está versionado.

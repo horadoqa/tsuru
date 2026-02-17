@@ -1,0 +1,3 @@
+Remover Router do Tsuru
+
+$ tsuru app router remove -a report galeb_prod

@@ -1,0 +1,26 @@
+Fazendo bind para associar o serviço para à aplicação
+
+    $ tsuru service-instance-bind rpaas-be-rjdev holtdemo-be -a holtdemo-dev
+    $ tsuru rpaas status -s rpaas-be-rjdev -i holtdemo-be
+    $ tsuru service-info rpaas-be-rjdev
+
+rpaas-fe-rjdev
+
+    $ tsuru service-instance-add rpaas-fe-rjdev holtdemo-fe -t devops
+    $ tsuru service-instance-status rpaas-fe-rjdev holtdemo-fe
+
+    # Após o status de _up_, faça o bind da instância do serviço.
+    $ tsuru service-instance-bind rpaas-fe-rjdev holtdemo-fe -a holtdemo-dev
+    $ tsuru rpaas status -s rpaas-fe-rjdev -i holtdemo-fe
+
+Para escalar a quantidade de instâncias de rpaas que vão atender sua app, realize o comando abaixo lembrando que a quantidade é o número que você deseja de instâncias no total:
+
+    # Atenção:
+    # Em APPS do ambiente de DEV não devemos escalar novas instâncias de rpaas por que não precisa de HA.
+
+    $ tsuru rpaas scale rpaas-fe-rjdev -i holtdemo-fe -n 2
+
+Verificando as instâncias criadas
+
+$ tsuru service-instance-info rpaas-fe-rjdev holtdemo-fe | egrep -A1 "Address|Instances"
+

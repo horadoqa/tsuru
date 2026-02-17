@@ -1,0 +1,15 @@
+Remover Units
+
+$ tsuru unit-remove <quantidade> -a <APP> -p web
+
+Exemplo:
+
+$ tsuru unit-remove 4 -a videos-hits-api-test -p web
+
+pra remover a unit
+tsuru unit-remove 1 -a <aplicacao> -p web
+
+pra adicionar a unit
+tsuru unit-add 1 -a <aplicacao> -p web
+
+tsuru unit-remove 20 -a sales-cache-api-qa2 -p web && tsuru app-update -a sales-cache-api-qa2 --pool qa02-pool-f

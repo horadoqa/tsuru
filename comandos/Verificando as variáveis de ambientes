@@ -1,0 +1,6 @@
+Verificando as variáveis de ambientes
+
+    $ tsuru env-get -a holtdemo-dev
+
+    # Se precisar setar alguma variavel de ambiente use o comando:
+    $ tsuru env-set NOME_DA_VARIAVEL="minha-variável-de-ambiente" -a holtdemo-dev

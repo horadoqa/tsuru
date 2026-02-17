@@ -1,0 +1,16 @@
+App
+
+tsuru plan list
+
+tsuru service instance update workon --plan c0.1m1
+
+
+Rpaas
+
+tsuru service plan list rpaasv2-fe --pool gcp-adtech2-dev
+
+tsuru service instance update rpaasv2-be -i <instance> --plan c2m2
+
+Exemplo:
+
+tsuru service instance update rpaasv2-fe link-tracker-gcp-stg --plan 

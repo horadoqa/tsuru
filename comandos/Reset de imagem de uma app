@@ -1,0 +1,5 @@
+Reset de imagem de uma app
+
+Quando um novo deploy de uma app é realizado, o Tsuru faz um diff em relação ao deploy anterior, e cria somente uma layer com o que mudou. A cada 10 deploys criamos novamente uma imagem "limpa", a partir da imagem original da plataforma. Mas em alguns casos é necessário forçar um deploy a gerar novamente a imagem "limpa". Agora o comando `app-update` suporta a flag `-i/--image-reset`, que faz com que o próximo deploy seja "limpo":
+
+$ tsuru app-update -a <app> -i

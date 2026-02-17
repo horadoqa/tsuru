@@ -1,0 +1,1 @@
+tsuru unit autoscale set -a globoid-attributes-gcp-prod --cpu 40% --min 5 --max 90 --schedule '{"minReplicas": 20, "start": "13 10 * * *", "end": "20 12 * * *"}'

@@ -1,0 +1,14 @@
+Deploy 
+
+Configurar os arquivos que serão enviados no deploy
+
+Uma das formas de deploy no tsuru é com o comando 
+$ tsuru app-deploy -a <app> file1 file2 dir1 ...
+
+Esse comando envia todos os arquivos passados como parâmetro para a app. O mais comum é fazer 
+
+$ tsuru app-deploy -a <app> .
+
+Mas o problema é que esse comando inclui todos os arquivos e diretórios, inclusive o .git, arquivos de teste, cache, node_modules, etc. 
+
+Isso deixa o deploy mais lento e a imagem da app bem maior.

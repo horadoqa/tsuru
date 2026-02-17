@@ -1,0 +1,10 @@
+Monitorar uma app
+
+$ tsuru service-info healthcheck
+
+$ tsuru service-instance-add healthcheck hc-<app>
+
+$ tsuru service-instance-bind --app <app> healthcheck hc-<app>
+
+$ tsuru hc add-url healthcheck hc-<app> <app router>/healthcheck WORKING "Link da documentação da documentação"
+

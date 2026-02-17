@@ -1,0 +1,42 @@
+Criando página do cartola-periodico
+
+$ tsuru app-create site-cartola-periodico static -p small -r galeb_qa02 -t qa2 -o qa02_default -d site-cartola-periodico
+
+App "cartola-periodico" has been created!
+
+Use app-info to check the status of the app and its units.
+
+Your repository for "cartola-periodico" project is "tsuru-git@git.tsuru.globoi.com:cartola-periodico.git"
+
+Para fazer o deploy do projeto (subir o projeto)
+$ tsuru app-deploy -a site-cartola-periodico .
+
+
+$ tsuru app-deploy -a work-on-qa2 .
+
+http://quickstart.cloud.globoi.com/acl/
+
+
+$ tsuru app-create json-server nodejs -p small -r galeb_qa02 -t qa2 -o qa02_default -d json-server
+
+
+OBS.: Depois de criar o projeto, tem que fazer Deploy para poder subir a unit!!!
+
+
+
+$ tsuru platform-list
+- go
+- java
+- nodejs
+- perl
+- php
+- python
+- ruby
+- scratch
+- static
+
+
+$ tsuru app-deploy-list -a json-server
+
+
+tsuru app create <appname> [platform] [--plan/-p plan name] [--router/-r router name] [--team/-t team owner] [--pool/-o pool name] [--description/-d description] [--tag/-g tag]... [--router-opts key=value]...

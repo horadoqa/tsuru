@@ -1,0 +1,23 @@
+Usage: tsuru service-instance-remove <service-name> <service-instance-name> [-f/--force] [-y/--assume-yes] --ignore-errors
+
+Destroys a service instance. It can't remove a service instance that is bound
+to an app, so before remove a service instance, make sure there is no apps
+bound to it (see [[tsuru service-instance-info]] command).
+
+Flags:
+  -f, --force  (= false)
+      Forces the removal of a service instance binded to apps.
+  -h, --help  (= false)
+      Display help and exit
+  -y, --assume-yes  (= false)
+      Don't ask for confirmation.
+
+
+Exemplo !!!
+
+tsuru service-instance-remove tsuru-dbaas <banco> -f -y
+
+grou-raccoon, groutsuru, raccoon-dev
+
+
+tsuru service-instance-remove tsuru-dbaas grou_mysql_raccoon -y

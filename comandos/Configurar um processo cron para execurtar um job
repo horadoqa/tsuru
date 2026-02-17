@@ -1,0 +1,11 @@
+Configurar um processo cron para execurtar um job
+
+$ cat requeirements.txt
+cron
+
+$ cat jobs
+* * * * * echo "Running my job" > &1 2>&2
+
+$ cat Procfile
+worker: /bin/sh -c 'crontab jobs && exec cron -f'
+

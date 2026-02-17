@@ -1,0 +1,3 @@
+Resize RPAAS
+
+tsuru service instance update rpaas-fe-cme app -p huge

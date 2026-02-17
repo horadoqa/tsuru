@@ -1,0 +1,3 @@
+Verificando o pool disponível para criar uma app
+
+$ tsuru pool-list

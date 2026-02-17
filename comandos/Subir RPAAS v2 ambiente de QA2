@@ -1,0 +1,8 @@
+Subir RPAAS v2 ambiente de QA2
+
+$ tsuru service instance add rpaasv2-be-rjdev <nome da instancia> <time> -g flavor=qa02
+
+
+RPAAS v1 tinha Galeb na frente 
+
+RPAAS v2 não tem mais o GALEB

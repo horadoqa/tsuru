@@ -1,0 +1,5 @@
+Listar as apps em um pool 
+
+$ tsuru app-list -o qa02-kube-b
+
+

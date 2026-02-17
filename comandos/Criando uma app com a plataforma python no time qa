@@ -1,0 +1,3 @@
+Criando uma app com a plataforma python no time qa2
+
+$ tsuru app-create <nome-da-app> python -o qa2 -t qa2

@@ -1,0 +1,22 @@
+TSURU
+
+Mover apps entre os pools
+
+$ tsuru app-update -a <nome-da-app> -o <nome-do-machine-template-list>
+
+$ tsuru machine-template-list
+
+
+
+
+tsuru app-update -a sales-selfcare-bff-qa2 -o qa02-kube-f
+
+
+
+
+tsuru app-update -a sales-cache-api-qa2 -o qa02-kube-b && tsuru app-update -a sales-circuit-breaker-api-qa2 -o qa02-kube-b && tsuru app-update -a sales-mock-qa2 -o qa02-kube-b && tsuru app-update -a sales-selfcare-bff-qa2 -o qa02-kube-b
+
+
+
+
+tsuru app-update -a site-cartola-periodico -o qa02-kube-f

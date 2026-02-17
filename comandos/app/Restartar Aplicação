@@ -1,0 +1,5 @@
+Restartar Aplicação
+
+tsuru app-restart -a <Nome da aplicação>
+
+tsuru app-restart -a grou-ui

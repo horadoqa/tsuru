@@ -1,0 +1,185 @@
+Criar projeto no TSURU
+
+
+$ tsuru app-create work-on-qa2 static -p small -r galeb_qa02 -t qa2 -o qa02-pool-f -d helthcheck
+
+$ tsuru app-create cartola-periodico static -p small -r galeb_qa02 -t qa2 -o qa02-pool-b -d cartola-periodico
+
+
+$ tsuru app-create work-on-qa static -p small -r galeb_prod -t qa2 -o prod -d helthcheck
+
+
+DEV
+
+$ tsuru app-create work-on-qa static -p small -r galeb_prod -t qa2 -o dev -d helthcheck
+
+
+
+$ tsuru app-create
+tsuru versão 1.6.0.
+
+Uso: tsuru app-create <appname> [plataforma] [--plan / -p nome do plano] [--router / -r nome do roteador] [--team / -t dono da equipe] [--pool / -o pool name] [--description / -d descrição] [--tag / -g tag] ... ... [--router-opts key = value] ...
+
+
+Cria um novo aplicativo usando o nome e a plataforma fornecidos. Para tsuru, uma plataforma é dependente do provisionador. 
+Para verificar as plataformas disponíveis, use o comando [[tsuru platform-list]] e para adicionar uma plataforma use o comando [[tsuru platform-add]].
+
+
+Para criar um aplicativo, você precisa ser membro de pelo menos uma equipe. 
+Todos as equipes que você é membro (veja [[tsuru team-list]]) poderão acessar o aplicativo.
+
+$ tsuru team-list
++---------------------------------------------+-----------------------+------+
+| Team                                        | Permissions           | Tags |
++---------------------------------------------+-----------------------+------+
+| team-sillas                                 | service.read          |      |
+|                                             | service-instance.read |      |
++---------------------------------------------+-----------------------+------+
+
+O parâmetro [[--platform]] é o nome da plataforma a ser usada quando criando o aplicativo. Isso definirá como o tsuru entende e executa sua aplicativo. A lista de plataformas disponíveis pode ser encontrada executando [[tsuru platform-list]].
+
+$ tsuru platform-list
+
+- elixir
+- elixir-paulo
+- go
+- java
+- nodejs
+- perl
+- php
+- pypy
+- python
+- ruby
+- static
+
+
+O parâmetro [[--plan]] define o plano a ser usado. O plano especifica como recursos computacionais são alocados para o seu aplicativo. Normalmente isso significa limites para uso de memória e troca e quanto compartilhamento de cpu é alocado.
+A lista de planos disponíveis pode ser encontrada executando o [[tsuru plan-list]].
+
+$ tsuru plan-list
++------------+---------+------+-----------+---------+
+| Name       | Memory  | Swap | Cpu Share | Default |
++------------+---------+------+-----------+---------+
+| small      | 256 MB  | 0 MB | 1024      | true    |
+| medium     | 512 MB  | 0 MB | 1024      | false   |
+| large      | 1024 MB | 0 MB | 1024      | false   |
+| huge       | 2048 MB | 0 MB | 1024      | false   |
+| extra-huge | 4096 MB | 0 MB | 1024      | false   |
++------------+---------+------+-----------+---------+
+
+Se este parâmetro não for informado, o tsuru escolherá o plano com o [[padrão]] sinalizador definido como verdadeiro.
+
+O parâmetro [[--router]] define o roteador a ser usado. A lista de disponível
+Os roteadores podem ser encontrados executando [[tsuru router-list]].
+
+$ tsuru router-list
++------------------+---------+------------------------------------------------------------------------+
+| galeb_qa02       | galebv2 |                                                                        |
++------------------+---------+------------------------------------------------------------------------+
+
+Se este parâmetro não for informado, o tsuru escolherá o roteador com o [[padrão]] sinalizador definido como verdadeiro.
+
+O parâmetro [[- equipe]] descreve qual equipe é responsável pela criação app, isso só é necessário se o usuário atual pertencer a mais de uma equipe, em
+Nesse caso, esse parâmetro será obrigatório.
+
+O parâmetro [[--pool]] define qual pool seu aplicativo será implantado.
+Isso só é necessário se você tiver mais de um pool associado às suas equipes.
+
+$ tsuru pool-list
++---------------------+--------+-------------+-----------------+----------------------------
+| Pool                | Kind   | Provisioner | Teams           | Routers                   |
++---------------------+--------+-------------+-----------------+----------------------------
+| qa02-pool-a         | public | default     |                 | galeb_qa02                |
++---------------------+--------+-------------+-----------------+---------------------------+
+| qa02-pool-b         | public | default     |                 | galeb_qa02                |
++---------------------+--------+-------------+-----------------+---------------------------+
+| qa02-pool-c         | public | default     |                 | galeb_qa02                |
++---------------------+--------+-------------+-----------------+---------------------------+
+| qa02-pool-d         | public | default     |                 | galeb_qa02                |
++---------------------+--------+-------------+-----------------+---------------------------+
+| qa02-pool-e         | public | default     |                 | galeb_qa02                |
++---------------------+--------+-------------+-----------------+---------------------------+
+| qa02-pool-f         | public | default     |                 | galeb_qa02                |
++---------------------+--------+-------------+-----------------+---------------------------+
+| qa02-pool-g         | public | default     |                 | galeb_qa02                |
++---------------------+--------+-------------+-----------------+---------------------------+
+| qa02-pool-h         | public | default     |                 | galeb_qa02                |
++---------------------+--------+-------------+-----------------+---------------------------+
+| qa02_default        | public | default     |                 | galeb_qa02                |
++---------------------+--------+-------------+-----------------+---------------------------+
+
+O parâmetro [[--description]] define uma descrição para seu aplicativo.
+É um parâmetro opcional, e se não estiver definido, o aplicativo só não terá um descrição associada.
+
+O parâmetro [[--tag]] define uma tag para seu aplicativo. Você pode definir vários parâmetros [[- tag]].
+
+O parâmetro [[--router-opts]] permite passar parâmetros personalizados ao roteador usado pelo plano do aplicativo. A chave e os valores usados dependem do roteador
+implementação.
+
+
+Flags:
+
+  -d, --description (= "")
+      App description
+  -g, --tag  (= [])
+      App tag
+  -h, --help  (= false)
+      Display help and exit
+  -o, --pool (= "")
+      Pool to deploy your app
+  -p, --plan (= "")
+      The plan used to create the app
+  -r, --router (= "")
+      The router used by the app
+  --router-opts  (= {})
+      Router options
+  -t, --team (= "")
+      Team owner app
+
+
+Criar o projeto
+
+$ tsuru app-create work-on-qa2 static -p small -r galeb_qa02 -t qa2 -o qa02-pool-f -d helthcheck
+App "work-on-qa2" has been created!
+Use app-info to check the status of the app and its units.
+Your repository for "work-on-qa2" project is "tsuru-git@git.tsuru.globoi.com:work-on-qa2.git"
+
+$ git remote add tsuru-prod tsuru-git@git.tsuru.globoi.com:work-on-qa2.git
+
+$ git remote -v
+origin	https://gitlab.globoi.com/qa2/teste-periodico-cartola (fetch)
+origin	https://gitlab.globoi.com/qa2/teste-periodico-cartola (push)
+tsuru-prod	tsuru-git@git.tsuru.globoi.com:work-on-qa2.git (fetch)
+tsuru-prod	tsuru-git@git.tsuru.globoi.com:work-on-qa2.git (push)
+
+$ git remote remove tsuru-prod
+
+Criar o projeto no GITLAB
+
+https://gitlab.globoi.com/
+
+Baixar o projeto para a sua máquina
+
+$ git clone gitlab@gitlab.globoi.com:ricardo.fahham/work-on-qa2.git
+
+Criar os arquivos do projeto = https://github.com/tsuru/platforms/tree/master/examples/python
+
+Depois de criado
+
+$ git status 
+$ git add .
+$ git commit -m "Primeiro Commit"
+
+$ git push tsuru master
+
+
+gcp-infra-dev
+
+
+
+
+
+
+
+
+

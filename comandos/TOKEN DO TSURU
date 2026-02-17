@@ -1,0 +1,17 @@
+TOKEN DO TSURU
+
+## Lista os servidores do tsuru
+$ tsuru target-list
+* secure (https://tsuru.globoi.com)
+
+## Pega seu token pessoal do tsuru
+$ tsuru token-show
+
+
+Salvar o token em  variáveis de Ambiente
+
+
+provider "tsuru" {
+    tsuru_target_url = "https://tsuru.globoi.com"
+    tsuru_token = "xxxxxxxx"
+}

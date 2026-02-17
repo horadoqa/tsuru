@@ -1,0 +1,23 @@
+Adicionando uma instância do serviço helthcheck
+
+    $ tsuru service-info healthcheck
+    $ tsuru service-instance-add healthcheck hc-holtdemo-dev -t devops
+    $ tsuru service-instance-bind healthcheck hc-holtdemo-dev -a holtdemo-dev
+    $ tsuru hc add-url healthcheck hc-holtdemo-dev http://holtdemo-dev.gcloud.dev.globoi.com/healthcheck WORKING "KB00000 URL:kb.globoi.com/meu_kb"
+
+Adicionando uma watcher para receber a monitoração por e-mail
+
+    $ tsuru hc add-watcher healthcheck hc-holtdemo-dev monitoracao+watcher@corp.globo.com
+
+Configurar o arquivo tsuru.yml com o conteúdo:
+
+    healthcheck:
+    path: /healthcheck
+    method: GET
+    status: 200
+    match: .*WORKING.*
+    allowed_failures: 5
+    use_in_router: true
+    router_body: WORKING
+
+Obs: a string no campo match é usada apenas na validação do deploy. O campo router_body contém a string que será usada no check ativo que o router faz. Os routers usados na Globo.com atualmente não suportam regexp.

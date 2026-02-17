@@ -1,0 +1,49 @@
+tsuru user info
+
+(Nesse comando conseguimos visualizar todos os projetos, pools e times que fazemos parte).
+
+
+Para verificar se a aplicação está "bindada" na app, rodamos o comando:
+
+$ tsuru app-info -a "nome da aplicação"
+
+
+Service instances: 2
++-----------------+----------------+
+| Service         | Instance (Plan)|
++-----------------+----------------+
+| acl             | pockgqlqa2     |
+| tsuru-dbaas-qa2 | rgraphql_lab_sentinel_mem_qa2 (redis-4-0-small-ha-sentinel-memory-only-cs-rjdev-qa2-qa2) |
++-----------------+---------------------------------------+
+
+
+tsuru [comando tsuru] [service] [instance] -a [nome da aplicação]
+
+EX:
+tsuru service-instance-unbind tsuru-dbaas-qa2 db_google_trends_qa02 -a api-google-trends-qa02
+
+(Comando para desamarrar os serviços referenciados na app).
+
+
+
+tsuru service-instance-unbind swift-qa gcn-static-qa2 -a gcn-votes-qa2
+
+
+tsuru service-instance-unbind tsuru-dbaas gminerva_mysql -a minerva
+
+Service instances: 1
++---------+-----------------+
+| Service | Instance (Plan) |
++---------+-----------------+
+| acl     | report          |
++---------+-----------------+
+
+
+tsuru service-instance-unbind tsuru-dbaas acl -a report
+
+
+
+
+
+
+

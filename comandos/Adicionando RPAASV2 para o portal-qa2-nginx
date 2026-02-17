@@ -1,0 +1,13 @@
+Adicionando RPAASV2 para o portal-qa2-nginx
+
+
+portal-qa2-nginx
+
+https://portal-qa2-nginx.apps.tsuru.dev.gcp.i.globo
+
+https://portal-qa.globoi.com
+
+
+- tsuru service instance add rpaasv2-be rpaas-be-otp-manager-gcp-ttt --description 'Rpaas para portal de Homologacao e Performance' --team-owner qa2 --pool gcp-globoid-dev
+
+-tsuru service-instance-bind rpaasv2-be rpaas-be-otp-manager-gcp-ttt -a portal-qa2-nginx

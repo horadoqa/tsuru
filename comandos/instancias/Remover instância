@@ -1,0 +1,3 @@
+Remover instância
+
+$ tsuru remove-instance 

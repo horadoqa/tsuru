@@ -1,0 +1,6 @@
+Atualizar TSURU
+
+$ brew update
+$ brew upgrade tsuru
+
+$ brew update && brew upgrade tsuru

@@ -1,0 +1,8 @@
+Stop x Start App
+
+$ tsuru app-stop -a <aplicação>
+
+$ tsuru app-start -a <aplicação>
+
+$ tsuru app-restart -a <aplicação>
+

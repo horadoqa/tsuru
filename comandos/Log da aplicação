@@ -1,0 +1,11 @@
+Log da aplicação 
+
+$ tsuru app-log -a <nome-da-app> 
+$ tsuru app-log -a <nome-da-app>  --lines 1000
+$ tsuru app-log -a <nome-da-app>  --follow
+$ tsuru app-log -a <nome-da-app>  --unit <id-da-unit>
+$ tsuru app-log -a <nome-da-app>  --source app
+
+Lembrando que os logs são enviados para o graylog.
+
+tail | tsuru app-log -a <nome-da-app>

@@ -1,0 +1,3 @@
+Criando VMS no qa02-kube-a
+
+tsuru node-add template=kube_qa02_pool_f_CMAQ24BE

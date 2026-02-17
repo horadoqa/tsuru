@@ -1,0 +1,13 @@
+autoscale
+
+$ tsuru unit autoscale set --cpu 60% --min 2 --max 60 -a <> -p <>
+
+
+Globoesporte-api-prod-fe
+
+$ tsuru rpaasv2 autoscale update -s rpaasv2-fe -i <aplicacao> --cpu=50 --min 4 --masx 20
+
+tsuru rpaasv2 autoscale add -s rpaasv2-fe -i cartola-api-prod --cpu 50 --min 10 --max 12
+
+tsuru unit autoscale set -a globoid-attributes-gcp-prod --cpu 40% --min 5 --max 90 --schedule '{"minReplicas": 20, "start": "13 10 * * *", "end": "20 12 * * *"}'
+

@@ -1,0 +1,5 @@
+Subir projeto para o TSURU
+
+tsuru app deploy -a work-on-qa2 .
+
+

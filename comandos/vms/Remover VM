@@ -1,0 +1,35 @@
+Remover VMs
+
+tsuru node-remove https://10.224.194.57 --destroy
+
+tsuru node-remove https://10.224.194.99:2376 --destroy
+
+
+
+
+
+
+Outros hosts: qa02-pool-a
+
+
+tsuru node-remove https://10.224.194.121 --destroy
+
+$ tsuru node list -f pool=qa02-kube-a -q
+
+$ tsuru node list -f pool=qa02-kube-b -q
+
+$ tsuru node list -f pool=qa02-pool-c -q
+
+$ tsuru node list -f pool=qa02-pool-d -q
+
+$ tsuru node list -f pool=qa02-pool-e -q
+
+$ tsuru node list -f pool=qa02-pool-f -q
+
+$ tsuru node list -f pool=qa02-pool-g -q
+
+
+tsuru node list -f pool=qa02-kube-d -q
+
+ 
+

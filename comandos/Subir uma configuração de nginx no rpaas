@@ -1,0 +1,13 @@
+Subir uma configuração de nginx no rpaas
+
+Para subir uma configuração de nginx completamente diferente do padrão - que no caso faz proxy-pass para a sua app - basta usar o -c com @nome-do-arquivo-custom-.conf:
+
+    $ tsuru rpaas route -s rpaas-fe-rjdev -i rpaas-instance-name -p /blog -c @nome-do-arquivo-custom-route-fe.conf add
+
+    $ cd config/
+    $ tsuru rpaas block -s rpaas-fe-rjdev -i rpaas-instance-name -b server -c @nome-do-arquivo-custom-fe.conf add
+    $ tsuru rpaas block -s rpaas-fe-rjdev -i rpaas-instance-name -b http -c @nome-do-arquivo-custom-fe-upstream.conf add
+
+Você pode usar esse comandos para configurar o rpaas, mas se preferir ter um melhor controle dos arquivos de configuração, versionalizados e mantidos junto com o projeto, seria uma boa dar uma olhada no projeto de tsuru-deploy-module.
+
+http://gitlab.globoi.com/time-infra-scrum/tsuru-deploy-module.git

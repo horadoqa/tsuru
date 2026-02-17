@@ -1,0 +1,11 @@
+Fazer o restart da aplicação
+
+$tsuru app-restart -a <nome-da-aplicação>
+
+tsuru app-restart -a cartola-api-qa02
+
+tsuru app-restart -a camunda-qa2
+
+tsuru unit-remove 1 -a cartola-api-qa02 -p web
+
+tsuru container-move <id da unit> <ip da vm>

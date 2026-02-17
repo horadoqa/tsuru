@@ -1,0 +1,12 @@
+Error: Failed to connect to tsuru server (https://tsuru.globoi.com): x509: certificate signed by unknown authority
+
+Abrir o Keychain,
+Procura a CA RapidSSL RSA CA 2018,
+2 cliques nela,
+abre a setinha Trust,
+marca o primeiro box como Never Trust,
+fecha a janela, 
+dá dois cliques de novo, 
+marca como Always Trust, 
+e fecha de novo, 
+e ai tenta usar o tsuru app-list

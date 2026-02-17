@@ -1,0 +1,6 @@
+Continuos integration - ci-cd
+
+Token "qa2-ci-token" created: 8c0deef3e06c86e6b92e667bec8a8a247bff9058b408e344e202c8265b4b3d7f
+
+
+$ tsuru token list

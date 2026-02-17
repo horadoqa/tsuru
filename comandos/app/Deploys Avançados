@@ -1,0 +1,19 @@
+Deploys Avançados
+
+Preservando Versões
+
+$ tsuru app-deploy . -a <nome da app>
+
+
+$ curl myapp.gcloud.globoi.com
+
+$ curl v1.version.myapp.gcloud.globoi.com
+
+$ curl v2.version.myapp.gcloud.globoi.com
+
+$ curl app-router-version-add vN -a myapp
+
+
+portal-qa2-nginx
+
+tsuru app-deploy . -a portal-qa2-nginx
